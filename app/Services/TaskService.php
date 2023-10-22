@@ -7,7 +7,7 @@ use App\Repositories\TaskRepository;
 class TaskService
 {
 
-    protected $taskRepository;
+    protected TaskRepository $taskRepository;
 
     public function __construct(TaskRepository $taskRepository)
     {
@@ -29,9 +29,9 @@ class TaskService
         $this->taskRepository->delete($id);
     }
 
-    public function findByUserId($user_id)
+    public function findByUserIdGroupedByStatus($user_id)
     {
-        return $this->taskRepository->findByUserId($user_id);
+        return $this->taskRepository->findByUserIdGroupedByStatus($user_id);
     }
 
 }

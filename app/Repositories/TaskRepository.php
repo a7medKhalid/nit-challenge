@@ -2,10 +2,12 @@
 namespace App\Repositories;
 
 use App\Models\Task;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 class TaskRepository
 {
-    protected $task;
+    protected Task $task;
 
     public function __construct(Task $task)
     {
@@ -33,8 +35,15 @@ class TaskRepository
         $task->delete();
     }
 
-    public function findByUserId($user_id) : Task
+    public function findByUserId($user_id) : Collection
     {
-        return $this->task->where('user_id', $user_id)->get();
+        return $this->task->where('user_id', $user_id)
+            ->get();
+    }
+
+    public function findByUserIdGroupedByStatus($user_id) : Collection
+    {
+        return $this->findByUserId($user_id)
+            ->groupBy('status');
     }
 }

@@ -26,4 +26,9 @@ class TaskPolicy
         return $user->id === $task->user_id;
     }
 
+    public function viewAny(User $user, $task)
+    {
+        return true;
+    }
+
 }
