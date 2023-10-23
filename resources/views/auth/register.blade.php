@@ -1,39 +1,39 @@
 <x-guest-layout>
-    <x-authentication-card>
+    <x-jetstream.authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <x-jetstream.authentication-card-logo />
         </x-slot>
 
-        <x-validation-errors class="mb-4" />
+        <x-jetstream.validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jetstream.label for="name" value="{{ __('Name') }}" />
+                <x-jetstream.input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-jetstream.label for="email" value="{{ __('Email') }}" />
+                <x-jetstream.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jetstream.label for="password" value="{{ __('Password') }}" />
+                <x-jetstream.input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jetstream.label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jetstream.input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
-                    <x-label for="terms">
+                    <x-jetstream.label for="terms">
                         <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
+                            <x-jetstream.checkbox name="terms" id="terms" required />
 
                             <div class="ml-2">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
@@ -42,7 +42,7 @@
                                 ]) !!}
                             </div>
                         </div>
-                    </x-label>
+                    </x-jetstream.label>
                 </div>
             @endif
 
@@ -51,10 +51,10 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-jetstream.button class="ml-4">
                     {{ __('Register') }}
-                </x-button>
+                </x-jetstream.button>
             </div>
         </form>
-    </x-authentication-card>
+    </x-jetstream.authentication-card>
 </x-guest-layout>
