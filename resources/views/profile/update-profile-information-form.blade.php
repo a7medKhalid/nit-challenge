@@ -81,6 +81,16 @@
                 @endif
             @endif
         </div>
+
+        <!-- Locale -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jetstream.label for="locale" value="{{ __('Locale') }}" />
+            <select id="locale" wire:model="state.locale" class="mt-1 block w-full">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">
