@@ -16,7 +16,7 @@
 
         <div class="col-span-6 sm:col-span-4">
             <x-jetstream.label for="password" value="{{ __('New Password') }}" />
-            <x-jetstream.jetstream.input id="password" type="password" class="mt-1 block w-full" wire:model="state.password" autocomplete="new-password" />
+            <x-jetstream.input id="password" type="password" class="mt-1 block w-full" wire:model="state.password" autocomplete="new-password" />
             <x-jetstream.input-error for="password" class="mt-2" />
         </div>
 
