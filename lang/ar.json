@@ -198,5 +198,7 @@
     "Task Title" : "عنوان المهمة",
     "Change Status" : "تغيير الحالة",
     "Tasks" : "المهام",
-    "Locale" : "اللغة"
+    "Locale" : "اللغة",
+    "Select one of the following" : "اختر من القائمة",
+    "Choose Mail Provider" : "اختر مزود البريد"
 }

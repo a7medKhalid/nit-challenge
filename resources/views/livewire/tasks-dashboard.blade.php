@@ -27,14 +27,14 @@
             <div class="flex items-center justify-between">
                 <x-button secondary class="mb-4" onclick="$openModal('cardModal')" label="{{ __('Create Task') }}" />
                 <div class="mb-4">
-                    <livewire:manage-notifications-modal />
+                    <livewire:mail-provider-modal />
                 </div>
             </div>
 
 
             <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
                 @foreach(\App\Enums\TaskStatus::cases() as $status)
-                    <div class="md:w-1/3 p-4 bg-gray-100 rounded border">
+                    <div class="md:w-1/3 p-4 bg-gray-100 rounded border min-h-screen ">
                         <h3 class="text-lg font-bold mb-4">{{ __($status->value )}}</h3>
 
                         <div class="space-y-2">
